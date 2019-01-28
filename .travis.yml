@@ -1,0 +1,10 @@
+language: swift
+matrix:
+    include:
+        - osx_image: xcode10.1
+script:
+    - xcodebuild test -scheme TimeKit | xcpretty -c
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
+notifications:
+    email: false
