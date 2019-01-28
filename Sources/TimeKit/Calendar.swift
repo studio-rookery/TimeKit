@@ -19,8 +19,8 @@ private extension Calendar {
     }
     
     func startDate<T: ReferenceDateStrideable>(of component: Component, for value: T) -> Date {
-        let date = self.date(byAdding: component, value: value.intervalSinceReferenceDate, to: .referenceDate)!
-        return date - secondsFromGMT
+        let date = dateInterval(of: component, for: .referenceDate - secondsFromGMT)!.start
+        return self.date(byAdding: component, value: value.intervalSinceReferenceDate, to: date)!
     }
 }
 
