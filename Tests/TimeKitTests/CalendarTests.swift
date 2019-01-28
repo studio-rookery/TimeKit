@@ -129,7 +129,8 @@ extension CalendarTests {
         runTestCases(
             .startDate(of: Day("2001/01/01"), is: Date("2001/01/01 00:00"), in: .utc),
             .startDate(of: Day("2001/01/01"), is: Date("2000/12/31 15:00"), in: .tokyo),
-            .startDate(of: Day("2001/01/01"), is: Date("2001/01/01 10:00"), in: .honolulu)
+            .startDate(of: Day("2001/01/01"), is: Date("2001/01/01 10:00"), in: .honolulu),
+            .startDate(of: Day("2001/01/01"), is: Date("2001/01/01 00:00"), in: .chinese)
         )
     }
     
@@ -137,7 +138,8 @@ extension CalendarTests {
         runTestCases(
             .startDate(of: Month("2001/01"), is: Date("2001/01/01 00:00"), in: .utc),
             .startDate(of: Month("2001/01"), is: Date("2000/12/31 15:00"), in: .tokyo),
-            .startDate(of: Month("2001/01"), is: Date("2001/01/01 10:00"), in: .honolulu)
+            .startDate(of: Month("2001/01"), is: Date("2001/01/01 10:00"), in: .honolulu),
+            .startDate(of: Month("2001/01"), is: Date("2000/12/26 00:00"), in: .chinese)
         )
     }
     
@@ -145,7 +147,8 @@ extension CalendarTests {
         runTestCases(
             .startDate(of: Year("2001"), is: Date("2001/01/01 00:00"), in: .utc),
             .startDate(of: Year("2001"), is: Date("2000/12/31 15:00"), in: .tokyo),
-            .startDate(of: Year("2001"), is: Date("2001/01/01 10:00"), in: .honolulu)
+            .startDate(of: Year("2001"), is: Date("2001/01/01 10:00"), in: .honolulu),
+            .startDate(of: Year("2001"), is: Date("2000/02/05 00:00"), in: .chinese)
         )
     }
     
@@ -266,5 +269,21 @@ extension CalendarTests {
     
     func runTestCases(_ testCases: TestCase...) {
         testCases.forEach { $0.execute() }
+    }
+}
+
+extension CalendarTests {
+    
+    func testChinense() {
+        let chinese = Calendar.chinese
+        let gregorian_2000_12_26 = Day(intervalSinceReferenceDate: -6) // "2000/12/26" in gregorian is "0017/12/01" in chinese
+        let gregorian_2000_02_05 = Day(intervalSinceReferenceDate: -331) // "2000/02/05" in gregorian is "0017/01/01" in chinese
+        
+        XCTAssertEqual(chinese.firstDay(of: month_2001_01), gregorian_2000_12_26)
+        XCTAssertEqual(chinese.firstDay(of: year_2001), gregorian_2000_02_05)
+        XCTAssertEqual(chinese.isFirstDayOfMonth(gregorian_2000_12_26), true)
+        
+        XCTAssertEqual(chinese.startDate(of: month_2001_01), Date("2000/12/26 00:00"))
+        XCTAssertEqual(chinese.startDate(of: year_2001), Date("2000/02/05 00:00"))
     }
 }

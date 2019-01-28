@@ -30,4 +30,10 @@ extension Calendar {
         return calendar
     }()
     
+    static let chinese: Calendar = {
+        var calendar = Calendar(identifier: .chinese)
+        calendar.locale = utc.locale
+        calendar.timeZone = utc.timeZone
+        return calendar
+    }()
 }
