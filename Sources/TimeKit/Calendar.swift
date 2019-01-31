@@ -7,6 +7,17 @@
 
 import Foundation
 
+extension Calendar {
+
+    /// gregorian calendar +00:00
+    static internal let utc: Calendar = {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.locale = Locale(identifier: "en_US_POSIX")
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        return calendar
+    }()
+}
+
 private extension Calendar {
     
     var secondsFromGMT: TimeInterval {
