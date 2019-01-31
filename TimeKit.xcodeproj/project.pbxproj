@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		F4055B1F220336BE00DBC17C /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4055B1E220336BE00DBC17C /* DateFormatter.swift */; };
 		F4AD3FA421F89C4B004AC529 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD3FA321F89C4B004AC529 /* Date+Extension.swift */; };
 		F4AD3FA721F89C70004AC529 /* ReferenceDateStrideable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD3FA621F89C70004AC529 /* ReferenceDateStrideable.swift */; };
 		F4AD3FA921F89D8E004AC529 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD3FA821F89D8E004AC529 /* Day.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F4055B1E220336BE00DBC17C /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		F4AD3FA321F89C4B004AC529 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		F4AD3FA621F89C70004AC529 /* ReferenceDateStrideable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceDateStrideable.swift; sourceTree = "<group>"; };
 		F4AD3FA821F89D8E004AC529 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
@@ -157,7 +159,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -165,7 +167,6 @@
 				OBJ_10 /* Tests */,
 				OBJ_14 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -182,6 +183,7 @@
 				F4AD3FA521F89C61004AC529 /* Protocol */,
 				F4AD3FA221F89C3E004AC529 /* Extension */,
 				F4AD3FB021F89F08004AC529 /* Calendar.swift */,
+				F4055B1E220336BE00DBC17C /* DateFormatter.swift */,
 				F4AD3FA821F89D8E004AC529 /* Day.swift */,
 				F4AD3FAA21F89D94004AC529 /* Month.swift */,
 				F4AD3FAE21F89DA3004AC529 /* Year.swift */,
@@ -256,7 +258,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -274,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				F4055B1F220336BE00DBC17C /* DateFormatter.swift in Sources */,
 				F4AD3FA721F89C70004AC529 /* ReferenceDateStrideable.swift in Sources */,
 				F4AD3FAD21F89D9D004AC529 /* Weekday.swift in Sources */,
 				F4AD3FB121F89F08004AC529 /* Calendar.swift in Sources */,
