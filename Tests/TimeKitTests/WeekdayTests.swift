@@ -16,6 +16,16 @@ final class WeekdayTests: XCTestCase {
         XCTAssertEqual(Weekday.sunday.advanced(by: 10), .wednesday)
     }
     
+    func testDescription() {
+        XCTAssertEqual(Weekday.sunday.description, "sunday")
+        XCTAssertEqual(Weekday.monday.description, "monday")
+        XCTAssertEqual(Weekday.tuesday.description, "tuesday")
+        XCTAssertEqual(Weekday.wednesday.description, "wednesday")
+        XCTAssertEqual(Weekday.thursday.description, "thursday")
+        XCTAssertEqual(Weekday.friday.description, "friday")
+        XCTAssertEqual(Weekday.saturday.description, "saturday")
+    }
+    
     func testDistanceToPrevious() {
         struct TestCase {
             let base: Weekday
