@@ -6,15 +6,9 @@
 //
 
 import Foundation
+@testable import TimeKit
 
 extension Calendar {
-    /// +00:00
-    static public let utc: Calendar = {
-        var calendar = Calendar(identifier: .gregorian)
-        calendar.locale = Locale(identifier: "en_US_POSIX")
-        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
-        return calendar
-    }()
     
     /// +09:00
     static let tokyo: Calendar = {
