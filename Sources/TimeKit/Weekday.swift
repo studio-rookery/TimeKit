@@ -20,17 +20,17 @@ public enum Weekday: Int, CaseIterable, Hashable, Codable {
         switch (rawValue % 7) {
         case 0:
             self = .sunday
-        case 1:
+        case 1, -6:
             self = .monday
-        case 2:
+        case 2, -5:
             self = .tuesday
-        case 3:
+        case 3, -4:
             self = .wednesday
-        case 4:
+        case 4, -3:
             self = .thursday
-        case 5:
+        case 5, -2:
             self = .friday
-        case 6:
+        case 6, -1:
             self = .saturday
         default:
             fatalError()
