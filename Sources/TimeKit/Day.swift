@@ -17,6 +17,13 @@ public struct Day: Hashable, Codable, ReferenceDateStrideable {
     }
 }
 
+extension Day: CustomStringConvertible {
+    
+    public var description: String {
+        return "\(DateFormatter.dayFormatter.string(from: self)) in gregorian calendar"
+    }
+}
+
 public extension Day {
     
     /// Retruns a Day after a week.

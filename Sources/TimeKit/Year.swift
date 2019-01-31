@@ -16,3 +16,10 @@ public struct Year: Hashable, Codable, ReferenceDateStrideable {
         self.intervalSinceReferenceDate = intervalSinceReferenceDate
     }
 }
+
+extension Year: CustomStringConvertible {
+    
+    public var description: String {
+        return "\(DateFormatter.yearFormatter.string(from: self)) in gregorian calendar"
+    }
+}

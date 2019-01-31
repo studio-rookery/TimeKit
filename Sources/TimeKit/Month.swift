@@ -16,3 +16,10 @@ public struct Month: Hashable, Codable, ReferenceDateStrideable {
         self.intervalSinceReferenceDate = intervalSinceReferenceDate
     }
 }
+
+extension Month: CustomStringConvertible {
+    
+    public var description: String {
+        return "\(DateFormatter.monthFormatter.string(from: self)) in gregorian calendar"
+    }
+}

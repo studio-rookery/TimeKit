@@ -19,6 +19,13 @@ final class DayTests: XCTestCase {
         XCTAssertEqual(x.advanced(by: n), y)
     }
     
+    func testDescription() {
+        XCTAssertEqual(
+            Day(intervalSinceReferenceDate: 0).description,
+            "2001-01-01(Mon) in gregorian calendar"
+        )
+    }
+    
     func testAdvance() {
         var day = Day(intervalSinceReferenceDate: 0)
         day.advance(by: 5)

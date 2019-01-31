@@ -23,6 +23,8 @@
 /* Begin PBXBuildFile section */
 		F4055B1F220336BE00DBC17C /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4055B1E220336BE00DBC17C /* DateFormatter.swift */; };
 		F4055B212203377700DBC17C /* DateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4055B202203377700DBC17C /* DateFormatterTests.swift */; };
+		F4055B2322033ADC00DBC17C /* MonthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4055B2222033ADC00DBC17C /* MonthTests.swift */; };
+		F4055B2522033B0B00DBC17C /* YearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4055B2422033B0B00DBC17C /* YearTests.swift */; };
 		F4AD3FA421F89C4B004AC529 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD3FA321F89C4B004AC529 /* Date+Extension.swift */; };
 		F4AD3FA721F89C70004AC529 /* ReferenceDateStrideable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD3FA621F89C70004AC529 /* ReferenceDateStrideable.swift */; };
 		F4AD3FA921F89D8E004AC529 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD3FA821F89D8E004AC529 /* Day.swift */; };
@@ -63,6 +65,8 @@
 /* Begin PBXFileReference section */
 		F4055B1E220336BE00DBC17C /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		F4055B202203377700DBC17C /* DateFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterTests.swift; sourceTree = "<group>"; };
+		F4055B2222033ADC00DBC17C /* MonthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTests.swift; sourceTree = "<group>"; };
+		F4055B2422033B0B00DBC17C /* YearTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearTests.swift; sourceTree = "<group>"; };
 		F4AD3FA321F89C4B004AC529 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		F4AD3FA621F89C70004AC529 /* ReferenceDateStrideable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceDateStrideable.swift; sourceTree = "<group>"; };
 		F4AD3FA821F89D8E004AC529 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				F4AD3FC121F8A384004AC529 /* IntTests.swift */,
 				F4AD3FC321F8A3C4004AC529 /* WeekdayTests.swift */,
 				F4AD3FC521F8A830004AC529 /* DayTests.swift */,
+				F4055B2222033ADC00DBC17C /* MonthTests.swift */,
+				F4055B2422033B0B00DBC17C /* YearTests.swift */,
 				F4055B202203377700DBC17C /* DateFormatterTests.swift */,
 			);
 			name = TimeKitTests;
@@ -303,12 +309,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				F4055B2522033B0B00DBC17C /* YearTests.swift in Sources */,
 				F4AD3FC021F8A367004AC529 /* Int+Extension.swift in Sources */,
 				F4055B212203377700DBC17C /* DateFormatterTests.swift in Sources */,
 				F4AD3FC421F8A3C4004AC529 /* WeekdayTests.swift in Sources */,
 				F4AD3FC621F8A830004AC529 /* DayTests.swift in Sources */,
 				F4AD3FBE21F8A323004AC529 /* Initializer.swift in Sources */,
 				OBJ_41 /* XCTestManifests.swift in Sources */,
+				F4055B2322033ADC00DBC17C /* MonthTests.swift in Sources */,
 				F4AD3FC221F8A384004AC529 /* IntTests.swift in Sources */,
 				F4AD3FBC21F8A315004AC529 /* Calendar+Extension.swift in Sources */,
 				F4AD3FB821F8A1E2004AC529 /* CalendarTests.swift in Sources */,
