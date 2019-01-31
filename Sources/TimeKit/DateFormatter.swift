@@ -22,3 +22,30 @@ internal extension DateFormatter {
     static let monthFormatter = makeDateFormatter(dateFormat: "yyyy-MM")
     static let yearFormatter = makeDateFormatter(dateFormat: "yyyy")
 }
+
+public extension DateFormatter {
+    
+    func string(from day: Day) -> String {
+        return string(from: calendar.startDate(of: day))
+    }
+    
+    func string(from month: Month) -> String {
+        return string(from: calendar.startDate(of: month))
+    }
+    
+    func string(from year: Year) -> String {
+        return string(from: calendar.startDate(of: year))
+    }
+    
+    func day(from string: String) -> Day? {
+        return date(from: string).map(calendar.day(for: ))
+    }
+    
+    func month(from string: String) -> Month? {
+        return date(from: string).map(calendar.month(for: ))
+    }
+    
+    func year(from string: String) -> Year? {
+        return date(from: string).map(calendar.year(for: ))
+    }
+}
