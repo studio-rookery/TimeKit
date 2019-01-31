@@ -10,6 +10,16 @@ import XCTest
 
 final class WeekdayTests: XCTestCase {
     
+    func testNegativeRawValue() {
+        XCTAssertEqual(Weekday(rawValue: -7), .sunday)
+        XCTAssertEqual(Weekday(rawValue: -6), .monday)
+        XCTAssertEqual(Weekday(rawValue: -5), .tuesday)
+        XCTAssertEqual(Weekday(rawValue: -4), .wednesday)
+        XCTAssertEqual(Weekday(rawValue: -3), .thursday)
+        XCTAssertEqual(Weekday(rawValue: -2), .friday)
+        XCTAssertEqual(Weekday(rawValue: -1), .saturday)
+    }
+    
     func testAdding() {
         XCTAssertEqual(Weekday.sunday.advanced(by: 1), .monday)
         XCTAssertEqual(Weekday.sunday.advanced(by: 7), .sunday)
