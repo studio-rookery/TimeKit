@@ -44,4 +44,14 @@ final class DayTests: XCTestCase {
         let day = Day(intervalSinceReferenceDate: 0)
         XCTAssertEqual(day.weekday, .monday)
     }
+    
+    func testPreviousWeekday() {
+        let day = Day(intervalSinceReferenceDate: 0) // monday
+        XCTAssertEqual(day.previous(.sunday), Day(intervalSinceReferenceDate: -1))
+    }
+    
+    func testNextWeekday() {
+        let day = Day(intervalSinceReferenceDate: 0) // monday
+        XCTAssertEqual(day.next(.monday), Day(intervalSinceReferenceDate: 7))
+    }
 }

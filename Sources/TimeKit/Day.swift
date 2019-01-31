@@ -43,4 +43,20 @@ public extension Day {
     var weekday: Weekday {
         return Calendar.utc.weekday(for: self)
     }
+    
+    /// Returns a last weekday before this day in `gregorian` calendar.
+    ///
+    /// - Parameter weekday: the specified weekday.
+    /// - Returns: a last day of a given weekday before self.
+    func previous(_ weekday: Weekday) -> Day {
+        return Calendar.utc.previous(weekday, before: self)
+    }
+    
+    /// Returns a next weekday before self in `gregorian` calendar.
+    ///
+    /// - Parameter weekday: the specified weekday.
+    /// - Returns: a last day of a given weekday after self.
+    func next(_ weekday: Weekday) -> Day {
+        return Calendar.utc.next(weekday, after: self)
+    }
 }
