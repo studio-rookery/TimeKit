@@ -36,3 +36,11 @@ public extension Day {
         return advanced(by: -Weekday.allCases.count)
     }
 }
+
+public extension Day {
+    
+    /// Returns a Weekday of self in `gregorian` calendar.
+    var weekday: Weekday {
+        return Calendar.utc.weekday(for: self)
+    }
+}
