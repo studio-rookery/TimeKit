@@ -11,7 +11,7 @@ import Foundation
 /// `rawValue` corresponds to the value returned by `DateComponents.weekday`.
 public enum Weekday: Int, CaseIterable, Hashable, Codable {
     /// sunday
-    case sunday
+    case sunday = 1
     /// monday
     case monday
     /// tuesday
@@ -27,19 +27,19 @@ public enum Weekday: Int, CaseIterable, Hashable, Codable {
     
     public init(rawValue: Int) {
         switch (rawValue % 7) {
-        case 0:
-            self = .sunday
         case 1, -6:
-            self = .monday
+            self = .sunday
         case 2, -5:
-            self = .tuesday
+            self = .monday
         case 3, -4:
-            self = .wednesday
+            self = .tuesday
         case 4, -3:
-            self = .thursday
+            self = .wednesday
         case 5, -2:
-            self = .friday
+            self = .thursday
         case 6, -1:
+            self = .friday
+        case 0:
             self = .saturday
         default:
             fatalError()

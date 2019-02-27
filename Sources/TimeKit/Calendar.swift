@@ -171,7 +171,7 @@ public extension Calendar {
     /// - Parameter date: the date to search.
     /// - Returns: a Weekday for a given Date.
     func weekday(for date: Date) -> Weekday {
-        let weekday = dateComponents([.weekday], from: date).weekday! - 1
+        let weekday = dateComponents([.weekday], from: date).weekday!
         return Weekday(rawValue: weekday)
     }
     
