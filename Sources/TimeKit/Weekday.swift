@@ -7,13 +7,22 @@
 
 import Foundation
 
+/// `Weekday` represents the day of the week.
+/// `rawValue` corresponds to the value returned by `DateComponents.weekday`.
 public enum Weekday: Int, CaseIterable, Hashable, Codable {
+    /// sunday
     case sunday
+    /// monday
     case monday
+    /// tuesday
     case tuesday
+    /// wednesday
     case wednesday
+    /// thursday
     case thursday
+    /// friday
     case friday
+    /// saturday
     case saturday
     
     public init(rawValue: Int) {
@@ -62,14 +71,26 @@ extension Weekday: CustomStringConvertible {
 
 public extension Weekday {
     
+    /// Returns `Weekday` adding the specified number of days.
+    ///
+    /// - Parameter n: the number of days to add.
+    /// - Returns: `Weekday` added the specified number of days.
     func advanced(by n: Int) -> Weekday {
         return Weekday(rawValue: rawValue + n)
     }
     
+    /// Returns distance to the specified previous weekday.
+    ///
+    /// - Parameter weekday: the weekday to compare.
+    /// - Returns: distance between the specified weekday and self.
     func distance(toPrevious weekday: Weekday) -> Int {
         return -weekday.distance(toNext: self)
     }
     
+    /// Returns distance to the specified next weekday.
+    ///
+    /// - Parameter weekday: the weekday to compare.
+    /// - Returns: distance between the specified weekday and self.
     func distance(toNext nextWeekday: Weekday) -> Int {
         let distance = nextWeekday.rawValue - rawValue
         if distance < 1 {
