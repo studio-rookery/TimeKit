@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// `Day` is a unit of time representing Year without a TimeZone.
+/// `Year` is a unit of time representing year without a TimeZone.
 public struct Year: Hashable, Codable, ReferenceDateStrideable {
     
     public var intervalSinceReferenceDate: Int
