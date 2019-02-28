@@ -84,7 +84,7 @@
 		F4AD3FC521F8A830004AC529 /* DayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTests.swift; sourceTree = "<group>"; };
 		OBJ_13 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		"TimeKit::TimeKit::Product" /* TimeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TimeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"TimeKit::TimeKit::Product" /* TimeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"TimeKit::TimeKitTests::Product" /* TimeKitTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = TimeKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -342,6 +342,7 @@
 		OBJ_19 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -366,6 +367,7 @@
 		OBJ_20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
