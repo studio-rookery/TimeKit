@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "9999"
+   LastUpgradeVersion = "1010"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "TimeKit::TimeKit"
+               BlueprintIdentifier = "F48B6B9E222ACD1E00A8EA3E"
                BuildableName = "TimeKit.framework"
-               BlueprintName = "TimeKit"
+               BlueprintName = "TimeKit iOS"
+               ReferencedContainer = "container:TimeKit.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F48B6BA6222ACD1E00A8EA3E"
+               BuildableName = "TimeKit iOSTests.xctest"
+               BlueprintName = "TimeKit iOSTests"
                ReferencedContainer = "container:TimeKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,13 +47,22 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "TimeKit::TimeKitTests"
-               BuildableName = "TimeKitTests.xctest"
-               BlueprintName = "TimeKitTests"
+               BlueprintIdentifier = "F48B6BA6222ACD1E00A8EA3E"
+               BuildableName = "TimeKit iOSTests.xctest"
+               BlueprintName = "TimeKit iOSTests"
                ReferencedContainer = "container:TimeKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F48B6B9E222ACD1E00A8EA3E"
+            BuildableName = "TimeKit.framework"
+            BlueprintName = "TimeKit iOS"
+            ReferencedContainer = "container:TimeKit.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -56,9 +79,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "TimeKit::TimeKit"
+            BlueprintIdentifier = "F48B6B9E222ACD1E00A8EA3E"
             BuildableName = "TimeKit.framework"
-            BlueprintName = "TimeKit"
+            BlueprintName = "TimeKit iOS"
             ReferencedContainer = "container:TimeKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -71,6 +94,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F48B6B9E222ACD1E00A8EA3E"
+            BuildableName = "TimeKit.framework"
+            BlueprintName = "TimeKit iOS"
+            ReferencedContainer = "container:TimeKit.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
