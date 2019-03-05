@@ -3,7 +3,10 @@ matrix:
     include:
         - osx_image: xcode10.1
 script:
-    - xcodebuild test -scheme TimeKit | xcpretty -c
+    - xcodebuild test -scheme TimeKit-macOS | xcpretty -c
+    - xcodebuild test -scheme TimeKit-iOS -sdk iphonesimulator -destination "name=iPhone XS" | xcpretty -c
+    - xcodebuild test -scheme TimeKit-tvOS -sdk appletvsimulator -destination "name=Apple TV" | xcpretty -c
+    - xcodebuild build -scheme TimeKit-watchOS -sdk watchsimulator | xcpretty
 after_success:
     - bash <(curl -s https://codecov.io/bash)
 notifications:
