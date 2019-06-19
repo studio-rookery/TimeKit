@@ -22,7 +22,7 @@ public func + <DateComponent>(_ dateComponent: DateComponent, _ interval: Interv
 }
 
 public func += <DateComponent>(_ dateComponent: inout DateComponent, _ interval: Interval<DateComponent>) where DateComponent: ReferenceDateStrideable {
-    dateComponent.advance(by: interval.value)
+    dateComponent = dateComponent + interval
 }
 
 public func - <DateComponent>(_ dateComponent: DateComponent, _ interval: Interval<DateComponent>) -> DateComponent where DateComponent: ReferenceDateStrideable {
@@ -30,5 +30,5 @@ public func - <DateComponent>(_ dateComponent: DateComponent, _ interval: Interv
 }
 
 public func -= <DateComponent>(_ dateComponent: inout DateComponent, _ interval: Interval<DateComponent>) where DateComponent: ReferenceDateStrideable {
-    dateComponent.advance(by: -interval.value)
+    dateComponent = dateComponent - interval
 }
