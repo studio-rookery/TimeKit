@@ -54,4 +54,16 @@ final class DayTests: XCTestCase {
         let day = Day(intervalSinceReferenceDate: 0) // monday
         XCTAssertEqual(day.next(.monday), Day(intervalSinceReferenceDate: 7))
     }
+    
+    func testAddInterval() {
+        var day = Day(intervalSinceReferenceDate: 0)
+        day += 1.day
+        XCTAssertEqual(day, Day(intervalSinceReferenceDate: 1))
+    }
+    
+    func testSubstractInterval() {
+        var day = Day(intervalSinceReferenceDate: 0)
+        day -= 1.day
+        XCTAssertEqual(day, Day(intervalSinceReferenceDate: -1))
+    }
 }
