@@ -16,3 +16,19 @@ public struct Interval<Value: ReferenceDateStrideable>: Hashable {
         self.value = value
     }
 }
+
+public func + <DateComponent>(_ dateComponent: DateComponent, _ interval: Interval<DateComponent>) -> DateComponent where DateComponent: ReferenceDateStrideable {
+    return dateComponent.advanced(by: interval.value)
+}
+
+public func += <DateComponent>(_ dateComponent: inout DateComponent, _ interval: Interval<DateComponent>) where DateComponent: ReferenceDateStrideable {
+    dateComponent.advance(by: interval.value)
+}
+
+public func - <DateComponent>(_ dateComponent: DateComponent, _ interval: Interval<DateComponent>) -> DateComponent where DateComponent: ReferenceDateStrideable {
+    return dateComponent.advanced(by: -interval.value)
+}
+
+public func -= <DateComponent>(_ dateComponent: inout DateComponent, _ interval: Interval<DateComponent>) where DateComponent: ReferenceDateStrideable {
+    dateComponent.advance(by: -interval.value)
+}
