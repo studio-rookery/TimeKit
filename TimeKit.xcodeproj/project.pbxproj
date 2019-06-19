@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F489C97022BA7748009AD977 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489C96F22BA7748009AD977 /* Interval.swift */; };
 		F48B6BA8222ACD1E00A8EA3E /* TimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48B6B9F222ACD1E00A8EA3E /* TimeKit.framework */; };
 		F48B6BE0222ACD5D00A8EA3E /* TimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48B6BD7222ACD5D00A8EA3E /* TimeKit.framework */; };
 		F48B6BFC222ACD7100A8EA3E /* TimeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48B6BF3222ACD7100A8EA3E /* TimeKit.framework */; };
@@ -107,6 +108,7 @@
 		F4055B202203377700DBC17C /* DateFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterTests.swift; sourceTree = "<group>"; };
 		F4055B2222033ADC00DBC17C /* MonthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTests.swift; sourceTree = "<group>"; };
 		F4055B2422033B0B00DBC17C /* YearTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearTests.swift; sourceTree = "<group>"; };
+		F489C96F22BA7748009AD977 /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
 		F48B6B9F222ACD1E00A8EA3E /* TimeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TimeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F48B6BA7222ACD1E00A8EA3E /* TimeKit iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TimeKit iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F48B6BD7222ACD5D00A8EA3E /* TimeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TimeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -284,6 +286,7 @@
 				F4AD3FAA21F89D94004AC529 /* Month.swift */,
 				F4AD3FAE21F89DA3004AC529 /* Year.swift */,
 				F4AD3FAC21F89D9D004AC529 /* Weekday.swift */,
+				F489C96F22BA7748009AD977 /* Interval.swift */,
 			);
 			name = TimeKit;
 			path = Sources/TimeKit;
@@ -568,6 +571,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F489C97022BA7748009AD977 /* Interval.swift in Sources */,
 				F48B6C26222AD12B00A8EA3E /* Int+Extension.swift in Sources */,
 				F48B6C24222AD12B00A8EA3E /* ReferenceDateStrideable.swift in Sources */,
 				F48B6C2C222AD12B00A8EA3E /* Weekday.swift in Sources */,
