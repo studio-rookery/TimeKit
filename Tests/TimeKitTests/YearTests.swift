@@ -16,4 +16,16 @@ final class YearTests: XCTestCase {
             "2001 in gregorian calendar"
         )
     }
+    
+    func testAddInterval() {
+        var year = Year(intervalSinceReferenceDate: 0)
+        year += 1.year
+        XCTAssertEqual(year, Year(intervalSinceReferenceDate: 1))
+    }
+    
+    func testSubstractInterval() {
+        var year = Year(intervalSinceReferenceDate: 0)
+        year -= 1.year
+        XCTAssertEqual(year, Year(intervalSinceReferenceDate: -1))
+    }
 }

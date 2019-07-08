@@ -7,14 +7,10 @@
 
 import Foundation
 
-extension Int {
-    
-    private var timeInterval: TimeInterval {
-        return TimeInterval(self)
-    }
+extension TimeInterval {
     
     var seconds: TimeInterval {
-        return timeInterval
+        return self
     }
     
     var minutes: TimeInterval {

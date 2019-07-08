@@ -57,6 +57,11 @@ For the same reason as above, you need a `Calendar` to convert to Date from the 
 let tomorrow = day.next
 let yesterday = day.previous
 
+// Addition and subtraction
+let threeDaysLater = day + 3.day
+let fourMonthsAgo = month - 4.month
+let fiveYearsLater = year + 5.year
+
 // Obtain the date components range
 let days = 42.days(from: today)     // ["1970/01/01", "1970/01/02", "1970/01/03", ...]
 let months = 12.months(from: month) // ["1970/01", "1970/02", "1970/03", ...]

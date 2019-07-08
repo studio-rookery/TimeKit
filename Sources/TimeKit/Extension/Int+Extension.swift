@@ -44,3 +44,21 @@ public extension Int {
         }
     }
 }
+
+public extension Int {
+    
+    /// The interval for `Day`
+    var day: Interval<Day> {
+        return Interval(value: self)
+    }
+    
+    /// The interval for `Month`
+    var month: Interval<Month> {
+        return Interval(value: self)
+    }
+    
+    /// The interval for `Year`
+    var year: Interval<Year> {
+        return Interval(value: self)
+    }
+}

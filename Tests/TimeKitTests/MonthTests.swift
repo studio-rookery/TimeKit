@@ -16,4 +16,16 @@ final class MonthTests: XCTestCase {
             "2001-01 in gregorian calendar"
         )
     }
+    
+    func testAddInterval() {
+        var month = Month(intervalSinceReferenceDate: 0)
+        month += 1.month
+        XCTAssertEqual(month, Month(intervalSinceReferenceDate: 1))
+    }
+    
+    func testSubstractInterval() {
+        var month = Month(intervalSinceReferenceDate: 0)
+        month -= 1.month
+        XCTAssertEqual(month, Month(intervalSinceReferenceDate: -1))
+    }
 }
