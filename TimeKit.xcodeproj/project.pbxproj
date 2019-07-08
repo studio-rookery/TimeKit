@@ -77,6 +77,9 @@
 		F48B6C66222AD13C00A8EA3E /* MonthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4055B2222033ADC00DBC17C /* MonthTests.swift */; };
 		F48B6C67222AD13C00A8EA3E /* YearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4055B2422033B0B00DBC17C /* YearTests.swift */; };
 		F48B6C68222AD13C00A8EA3E /* DateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4055B202203377700DBC17C /* DateFormatterTests.swift */; };
+		F4BB704822D38EE40042E9A9 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489C96F22BA7748009AD977 /* Interval.swift */; };
+		F4BB704922D38EE50042E9A9 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489C96F22BA7748009AD977 /* Interval.swift */; };
+		F4BB704A22D38EE60042E9A9 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489C96F22BA7748009AD977 /* Interval.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -605,6 +608,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4BB704822D38EE40042E9A9 /* Interval.swift in Sources */,
 				F48B6C2F222AD12C00A8EA3E /* Int+Extension.swift in Sources */,
 				F48B6C2D222AD12C00A8EA3E /* ReferenceDateStrideable.swift in Sources */,
 				F48B6C35222AD12C00A8EA3E /* Weekday.swift in Sources */,
@@ -638,6 +642,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4BB704922D38EE50042E9A9 /* Interval.swift in Sources */,
 				F48B6C38222AD12D00A8EA3E /* Int+Extension.swift in Sources */,
 				F48B6C36222AD12D00A8EA3E /* ReferenceDateStrideable.swift in Sources */,
 				F48B6C3E222AD12D00A8EA3E /* Weekday.swift in Sources */,
@@ -671,6 +676,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4BB704A22D38EE60042E9A9 /* Interval.swift in Sources */,
 				F48B6C41222AD12E00A8EA3E /* Int+Extension.swift in Sources */,
 				F48B6C3F222AD12E00A8EA3E /* ReferenceDateStrideable.swift in Sources */,
 				F48B6C47222AD12E00A8EA3E /* Weekday.swift in Sources */,
