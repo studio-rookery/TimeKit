@@ -25,13 +25,14 @@ private extension Calendar {
     }
     
     func startDateComponents(_ component: Component, for date: Date) -> DateComponents {
-        let truncated = dateInterval(of: component, for: date)!.start + secondsFromGMT
+        let truncated = dateInterval(of: component, for: date)!.start + secondsFromGMT - timeZone.daylightSavingTimeOffset()
         return dateComponents([component], from: .referenceDate, to: truncated)
     }
     
     func startDate<T: ReferenceDateStrideable>(of component: Component, for value: T) -> Date {
-        let date = dateInterval(of: component, for: .referenceDate - secondsFromGMT)!.start
-        return self.date(byAdding: component, value: value.intervalSinceReferenceDate, to: date)!
+        let date = Date.referenceDate - secondsFromGMT + timeZone.daylightSavingTimeOffset()
+        let startDate = dateInterval(of: component, for: date)!.start
+        return self.date(byAdding: component, value: value.intervalSinceReferenceDate, to: startDate)!
     }
 }
 
