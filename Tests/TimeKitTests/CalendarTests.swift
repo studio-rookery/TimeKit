@@ -130,6 +130,7 @@ extension CalendarTests {
             .startDate(of: Day("2001/01/01"), is: Date("2001/01/01 00:00"), in: .utc),
             .startDate(of: Day("2001/01/01"), is: Date("2000/12/31 15:00"), in: .tokyo),
             .startDate(of: Day("2001/01/01"), is: Date("2001/01/01 10:00"), in: .honolulu),
+            .startDate(of: Day("2001/01/01"), is: Date("2000/12/31 23:00"), in: .amsterdam),
             .startDate(of: Day("2001/01/01"), is: Date("2001/01/01 00:00"), in: .chinese)
         )
     }
@@ -139,6 +140,7 @@ extension CalendarTests {
             .startDate(of: Month("2001/01"), is: Date("2001/01/01 00:00"), in: .utc),
             .startDate(of: Month("2001/01"), is: Date("2000/12/31 15:00"), in: .tokyo),
             .startDate(of: Month("2001/01"), is: Date("2001/01/01 10:00"), in: .honolulu),
+            .startDate(of: Month("2001/01"), is: Date("2000/12/31 23:00"), in: .amsterdam),
             .startDate(of: Month("2001/01"), is: Date("2000/12/26 00:00"), in: .chinese)
         )
     }
@@ -148,6 +150,7 @@ extension CalendarTests {
             .startDate(of: Year("2001"), is: Date("2001/01/01 00:00"), in: .utc),
             .startDate(of: Year("2001"), is: Date("2000/12/31 15:00"), in: .tokyo),
             .startDate(of: Year("2001"), is: Date("2001/01/01 10:00"), in: .honolulu),
+            .startDate(of: Year("2001"), is: Date("2000/12/31 23:00"), in: .amsterdam),
             .startDate(of: Year("2001"), is: Date("2000/02/05 00:00"), in: .chinese)
         )
     }
@@ -157,22 +160,37 @@ extension CalendarTests {
             .date(Date("2001/01/01 00:00"), is: Day("2001/01/01"), in: .utc),
             .date(Date("2001/01/01 00:00"), is: Day("2001/01/01"), in: .tokyo),
             .date(Date("2001/01/01 00:00"), is: Day("2000/12/31"), in: .honolulu),
+            .date(Date("2001/01/01 00:00"), is: Day("2001/01/01"), in: .amsterdam),
             
             .date(Date("2000/12/31 14:59"), is: Day("2000/12/31"), in: .utc),
             .date(Date("2000/12/31 14:59"), is: Day("2000/12/31"), in: .tokyo),
             .date(Date("2000/12/31 14:59"), is: Day("2000/12/31"), in: .honolulu),
+            .date(Date("2000/12/31 14:59"), is: Day("2000/12/31"), in: .amsterdam),
             
             .date(Date("2000/12/31 15:00"), is: Day("2000/12/31"), in: .utc),
             .date(Date("2000/12/31 15:00"), is: Day("2001/01/01"), in: .tokyo),
             .date(Date("2000/12/31 15:00"), is: Day("2000/12/31"), in: .honolulu),
+            .date(Date("2000/12/31 15:00"), is: Day("2000/12/31"), in: .amsterdam),
             
             .date(Date("2000/12/31 10:00"), is: Day("2000/12/31"), in: .utc),
             .date(Date("2000/12/31 10:00"), is: Day("2000/12/31"), in: .tokyo),
             .date(Date("2000/12/31 10:00"), is: Day("2000/12/31"), in: .honolulu),
+            .date(Date("2000/12/31 10:00"), is: Day("2000/12/31"), in: .amsterdam),
             
             .date(Date("2000/12/31 09:59"), is: Day("2000/12/31"), in: .utc),
             .date(Date("2000/12/31 09:59"), is: Day("2000/12/31"), in: .tokyo),
-            .date(Date("2000/12/31 09:59"), is: Day("2000/12/30"), in: .honolulu)
+            .date(Date("2000/12/31 09:59"), is: Day("2000/12/30"), in: .honolulu),
+            .date(Date("2000/12/31 09:59"), is: Day("2000/12/31"), in: .amsterdam),
+            
+            .date(Date("2000/12/31 23:00"), is: Day("2000/12/31"), in: .utc),
+            .date(Date("2000/12/31 23:00"), is: Day("2001/01/01"), in: .tokyo),
+            .date(Date("2000/12/31 23:00"), is: Day("2000/12/31"), in: .honolulu),
+            .date(Date("2000/12/31 23:00"), is: Day("2001/01/01"), in: .amsterdam),
+            
+            .date(Date("2000/12/31 22:59"), is: Day("2000/12/31"), in: .utc),
+            .date(Date("2000/12/31 22:59"), is: Day("2001/01/01"), in: .tokyo),
+            .date(Date("2000/12/31 22:59"), is: Day("2000/12/31"), in: .honolulu),
+            .date(Date("2000/12/31 22:59"), is: Day("2000/12/31"), in: .amsterdam)
         )
     }
     
@@ -181,22 +199,37 @@ extension CalendarTests {
             .date(Date("2001/01/01 00:00"), is: Month("2001/01"), in: .utc),
             .date(Date("2001/01/01 00:00"), is: Month("2001/01"), in: .tokyo),
             .date(Date("2001/01/01 00:00"), is: Month("2000/12"), in: .honolulu),
+            .date(Date("2001/01/01 00:00"), is: Month("2001/01"), in: .amsterdam),
             
             .date(Date("2000/12/31 14:59"), is: Month("2000/12"), in: .utc),
             .date(Date("2000/12/31 14:59"), is: Month("2000/12"), in: .tokyo),
             .date(Date("2000/12/31 14:59"), is: Month("2000/12"), in: .honolulu),
+            .date(Date("2000/12/31 14:59"), is: Month("2000/12"), in: .amsterdam),
             
             .date(Date("2000/12/31 15:00"), is: Month("2000/12"), in: .utc),
             .date(Date("2000/12/31 15:00"), is: Month("2001/01"), in: .tokyo),
             .date(Date("2000/12/31 15:00"), is: Month("2000/12"), in: .honolulu),
+            .date(Date("2000/12/31 15:00"), is: Month("2000/12"), in: .amsterdam),
             
             .date(Date("2000/12/31 10:00"), is: Month("2000/12"), in: .utc),
             .date(Date("2000/12/31 10:00"), is: Month("2000/12"), in: .tokyo),
             .date(Date("2000/12/31 10:00"), is: Month("2000/12"), in: .honolulu),
+            .date(Date("2000/12/31 10:00"), is: Month("2000/12"), in: .amsterdam),
             
             .date(Date("2000/12/31 09:59"), is: Month("2000/12"), in: .utc),
             .date(Date("2000/12/31 09:59"), is: Month("2000/12"), in: .tokyo),
-            .date(Date("2000/12/31 09:59"), is: Month("2000/12"), in: .honolulu)
+            .date(Date("2000/12/31 09:59"), is: Month("2000/12"), in: .honolulu),
+            .date(Date("2000/12/31 09:59"), is: Month("2000/12"), in: .amsterdam),
+            
+            .date(Date("2000/12/31 23:00"), is: Month("2000/12"), in: .utc),
+            .date(Date("2000/12/31 23:00"), is: Month("2001/01"), in: .tokyo),
+            .date(Date("2000/12/31 23:00"), is: Month("2000/12"), in: .honolulu),
+            .date(Date("2000/12/31 23:00"), is: Month("2001/01"), in: .amsterdam),
+            
+            .date(Date("2000/12/31 22:59"), is: Month("2000/12"), in: .utc),
+            .date(Date("2000/12/31 22:59"), is: Month("2001/01"), in: .tokyo),
+            .date(Date("2000/12/31 22:59"), is: Month("2000/12"), in: .honolulu),
+            .date(Date("2000/12/31 22:59"), is: Month("2000/12"), in: .amsterdam)
         )
     }
     
@@ -205,22 +238,37 @@ extension CalendarTests {
             .date(Date("2001/01/01 00:00"), is: Year("2001"), in: .utc),
             .date(Date("2001/01/01 00:00"), is: Year("2001"), in: .tokyo),
             .date(Date("2001/01/01 00:00"), is: Year("2000"), in: .honolulu),
+            .date(Date("2001/01/01 00:00"), is: Year("2001"), in: .amsterdam),
             
             .date(Date("2000/12/31 14:59"), is: Year("2000"), in: .utc),
             .date(Date("2000/12/31 14:59"), is: Year("2000"), in: .tokyo),
             .date(Date("2000/12/31 14:59"), is: Year("2000"), in: .honolulu),
+            .date(Date("2000/12/31 14:59"), is: Year("2000"), in: .amsterdam),
             
             .date(Date("2000/12/31 15:00"), is: Year("2000"), in: .utc),
             .date(Date("2000/12/31 15:00"), is: Year("2001"), in: .tokyo),
             .date(Date("2000/12/31 15:00"), is: Year("2000"), in: .honolulu),
+            .date(Date("2000/12/31 15:00"), is: Year("2000"), in: .amsterdam),
             
             .date(Date("2000/12/31 10:00"), is: Year("2000"), in: .utc),
             .date(Date("2000/12/31 10:00"), is: Year("2000"), in: .tokyo),
             .date(Date("2000/12/31 10:00"), is: Year("2000"), in: .honolulu),
+            .date(Date("2000/12/31 10:00"), is: Year("2000"), in: .amsterdam),
             
             .date(Date("2000/12/31 09:59"), is: Year("2000"), in: .utc),
             .date(Date("2000/12/31 09:59"), is: Year("2000"), in: .tokyo),
-            .date(Date("2000/12/31 09:59"), is: Year("2000"), in: .honolulu)
+            .date(Date("2000/12/31 09:59"), is: Year("2000"), in: .honolulu),
+            .date(Date("2000/12/31 09:59"), is: Year("2000"), in: .amsterdam),
+            
+            .date(Date("2000/12/31 23:00"), is: Year("2000"), in: .utc),
+            .date(Date("2000/12/31 23:00"), is: Year("2001"), in: .tokyo),
+            .date(Date("2000/12/31 23:00"), is: Year("2000"), in: .honolulu),
+            .date(Date("2000/12/31 23:00"), is: Year("2001"), in: .amsterdam),
+            
+            .date(Date("2000/12/31 22:59"), is: Year("2000"), in: .utc),
+            .date(Date("2000/12/31 22:59"), is: Year("2001"), in: .tokyo),
+            .date(Date("2000/12/31 22:59"), is: Year("2000"), in: .honolulu),
+            .date(Date("2000/12/31 22:59"), is: Year("2000"), in: .amsterdam)
         )
     }
     
