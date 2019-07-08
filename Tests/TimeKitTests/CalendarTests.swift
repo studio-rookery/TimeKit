@@ -131,7 +131,14 @@ extension CalendarTests {
             .startDate(of: Day("2001/01/01"), is: Date("2000/12/31 15:00"), in: .tokyo),
             .startDate(of: Day("2001/01/01"), is: Date("2001/01/01 10:00"), in: .honolulu),
             .startDate(of: Day("2001/01/01"), is: Date("2000/12/31 23:00"), in: .amsterdam),
-            .startDate(of: Day("2001/01/01"), is: Date("2001/01/01 00:00"), in: .chinese)
+            .startDate(of: Day("2001/01/01"), is: Date("2001/01/01 00:00"), in: .chinese),
+            
+            // Daylight Saving Time
+            .startDate(of: Day("2001/03/25"), is: Date("2001/03/24 23:00"), in: .amsterdam),
+            .startDate(of: Day("2001/03/26"), is: Date("2001/03/25 22:00"), in: .amsterdam),
+            .startDate(of: Day("2001/10/27"), is: Date("2001/10/26 22:00"), in: .amsterdam),
+            .startDate(of: Day("2001/10/28"), is: Date("2001/10/27 22:00"), in: .amsterdam),
+            .startDate(of: Day("2001/10/29"), is: Date("2001/10/28 23:00"), in: .amsterdam)
         )
     }
     
@@ -141,7 +148,13 @@ extension CalendarTests {
             .startDate(of: Month("2001/01"), is: Date("2000/12/31 15:00"), in: .tokyo),
             .startDate(of: Month("2001/01"), is: Date("2001/01/01 10:00"), in: .honolulu),
             .startDate(of: Month("2001/01"), is: Date("2000/12/31 23:00"), in: .amsterdam),
-            .startDate(of: Month("2001/01"), is: Date("2000/12/26 00:00"), in: .chinese)
+            .startDate(of: Month("2001/01"), is: Date("2000/12/26 00:00"), in: .chinese),
+            
+            // Daylight Saving Time
+            .startDate(of: Month("2001/03"), is: Date("2001/02/28 23:00"), in: .amsterdam),
+            .startDate(of: Month("2001/04"), is: Date("2001/03/31 22:00"), in: .amsterdam),
+            .startDate(of: Month("2001/10"), is: Date("2001/09/30 22:00"), in: .amsterdam),
+            .startDate(of: Month("2001/11"), is: Date("2001/10/31 23:00"), in: .amsterdam)
         )
     }
     
@@ -190,7 +203,14 @@ extension CalendarTests {
             .date(Date("2000/12/31 22:59"), is: Day("2000/12/31"), in: .utc),
             .date(Date("2000/12/31 22:59"), is: Day("2001/01/01"), in: .tokyo),
             .date(Date("2000/12/31 22:59"), is: Day("2000/12/31"), in: .honolulu),
-            .date(Date("2000/12/31 22:59"), is: Day("2000/12/31"), in: .amsterdam)
+            .date(Date("2000/12/31 22:59"), is: Day("2000/12/31"), in: .amsterdam),
+            
+            // Daylight Saving Time
+            .date(Date("2001/03/24 22:00"), is: Day("2001/03/24"), in: .amsterdam),
+            .date(Date("2001/03/25 22:00"), is: Day("2001/03/26"), in: .amsterdam),
+            .date(Date("2001/10/27 22:00"), is: Day("2001/10/28"), in: .amsterdam),
+            .date(Date("2001/10/28 22:00"), is: Day("2001/10/28"), in: .amsterdam),
+            .date(Date("2001/10/28 23:00"), is: Day("2001/10/29"), in: .amsterdam)
         )
     }
     
