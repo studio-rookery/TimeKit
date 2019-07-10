@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "TimeKit"
-  spec.version      = "1.0.0"
+  spec.version      = "1.1.1"
   spec.summary      = "Type safe, simple, light weight calendar components."
   spec.homepage     = "https://github.com/studio-rookery/TimeKit"
   spec.license      = "MIT"
