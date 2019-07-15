@@ -84,7 +84,8 @@ print(day) // => "1970/01/01(thu) in gregorian calendar"
 
 |Name|Version|
 |:-:|:-:|
-|Swift|4.2+|
+|Xcode|10.2+|
+|Swift|5.0+|
 |iOS|10.0+|
 |macOS|10.12+|
 |tvOS|10.0+|
