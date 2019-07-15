@@ -6,7 +6,7 @@ Pod::Spec.new do |spec|
   spec.license      = "MIT"
   spec.author       = { "masaki" => "studio.rookery@gmail.com" }
 
-  spec.swift_version = "4.2"
+  spec.swift_version = "5.0"
 
   spec.ios.deployment_target = "10.0"
   spec.osx.deployment_target = "10.12"
