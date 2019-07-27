@@ -105,5 +105,5 @@ github "studio-rookery/TimeKit"
 
 ### Swift Package Manager
 ```
-.package(url: "https://github.com/studio-rookery/TimeKit", from: "1.0.0")
+.package(url: "https://github.com/studio-rookery/TimeKit", from: "1.2.0")
 ```
