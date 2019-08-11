@@ -131,6 +131,7 @@ extension CalendarTests {
             .startDate(of: Day("2001/01/01"), is: Date("2000/12/31 15:00"), in: .tokyo),
             .startDate(of: Day("2001/01/01"), is: Date("2001/01/01 10:00"), in: .honolulu),
             .startDate(of: Day("2001/01/01"), is: Date("2000/12/31 23:00"), in: .amsterdam),
+            .startDate(of: Day("2001/01/01"), is: Date("2000/12/31 11:00"), in: .auckland),
             .startDate(of: Day("2001/01/01"), is: Date("2001/01/01 00:00"), in: .chinese),
             
             // Daylight Saving Time
@@ -138,7 +139,14 @@ extension CalendarTests {
             .startDate(of: Day("2001/03/26"), is: Date("2001/03/25 22:00"), in: .amsterdam),
             .startDate(of: Day("2001/10/27"), is: Date("2001/10/26 22:00"), in: .amsterdam),
             .startDate(of: Day("2001/10/28"), is: Date("2001/10/27 22:00"), in: .amsterdam),
-            .startDate(of: Day("2001/10/29"), is: Date("2001/10/28 23:00"), in: .amsterdam)
+            .startDate(of: Day("2001/10/29"), is: Date("2001/10/28 23:00"), in: .amsterdam),
+            
+            .startDate(of: Day("2001/10/06"), is: Date("2001/10/05 12:00"), in: .auckland),
+            .startDate(of: Day("2001/10/07"), is: Date("2001/10/06 12:00"), in: .auckland),
+            .startDate(of: Day("2001/10/08"), is: Date("2001/10/07 11:00"), in: .auckland),
+            .startDate(of: Day("2002/03/16"), is: Date("2002/03/15 11:00"), in: .auckland),
+            .startDate(of: Day("2002/03/17"), is: Date("2002/03/16 11:00"), in: .auckland),
+            .startDate(of: Day("2002/03/18"), is: Date("2002/03/17 12:00"), in: .auckland)
         )
     }
     
@@ -154,7 +162,12 @@ extension CalendarTests {
             .startDate(of: Month("2001/03"), is: Date("2001/02/28 23:00"), in: .amsterdam),
             .startDate(of: Month("2001/04"), is: Date("2001/03/31 22:00"), in: .amsterdam),
             .startDate(of: Month("2001/10"), is: Date("2001/09/30 22:00"), in: .amsterdam),
-            .startDate(of: Month("2001/11"), is: Date("2001/10/31 23:00"), in: .amsterdam)
+            .startDate(of: Month("2001/11"), is: Date("2001/10/31 23:00"), in: .amsterdam),
+            
+            .startDate(of: Month("2001/10"), is: Date("2001/09/30 12:00"), in: .auckland),
+            .startDate(of: Month("2001/11"), is: Date("2001/10/31 11:00"), in: .auckland),
+            .startDate(of: Month("2002/03"), is: Date("2002/02/28 11:00"), in: .auckland),
+            .startDate(of: Month("2002/04"), is: Date("2002/03/31 12:00"), in: .auckland)
         )
     }
     
@@ -164,6 +177,7 @@ extension CalendarTests {
             .startDate(of: Year("2001"), is: Date("2000/12/31 15:00"), in: .tokyo),
             .startDate(of: Year("2001"), is: Date("2001/01/01 10:00"), in: .honolulu),
             .startDate(of: Year("2001"), is: Date("2000/12/31 23:00"), in: .amsterdam),
+            .startDate(of: Year("2001"), is: Date("2000/12/31 11:00"), in: .auckland),
             .startDate(of: Year("2001"), is: Date("2000/02/05 00:00"), in: .chinese)
         )
     }
@@ -210,7 +224,16 @@ extension CalendarTests {
             .date(Date("2001/03/25 22:00"), is: Day("2001/03/26"), in: .amsterdam),
             .date(Date("2001/10/27 22:00"), is: Day("2001/10/28"), in: .amsterdam),
             .date(Date("2001/10/28 22:00"), is: Day("2001/10/28"), in: .amsterdam),
-            .date(Date("2001/10/28 23:00"), is: Day("2001/10/29"), in: .amsterdam)
+            .date(Date("2001/10/28 23:00"), is: Day("2001/10/29"), in: .amsterdam),
+            
+            // Auckland
+            .date(Date("2001/10/06 12:00"), is: Day("2001/10/07"), in: .auckland),
+            .date(Date("2001/10/07 11:00"), is: Day("2001/10/08"), in: .auckland),
+            .date(Date("2001/10/08 11:00"), is: Day("2001/10/09"), in: .auckland),
+            .date(Date("2002/03/16 11:00"), is: Day("2002/03/17"), in: .auckland),
+            .date(Date("2002/03/17 11:00"), is: Day("2002/03/17"), in: .auckland),
+            .date(Date("2002/03/17 12:00"), is: Day("2002/03/18"), in: .auckland),
+            .date(Date("2002/03/18 12:00"), is: Day("2002/03/19"), in: .auckland)
         )
     }
     
@@ -249,7 +272,13 @@ extension CalendarTests {
             .date(Date("2000/12/31 22:59"), is: Month("2000/12"), in: .utc),
             .date(Date("2000/12/31 22:59"), is: Month("2001/01"), in: .tokyo),
             .date(Date("2000/12/31 22:59"), is: Month("2000/12"), in: .honolulu),
-            .date(Date("2000/12/31 22:59"), is: Month("2000/12"), in: .amsterdam)
+            .date(Date("2000/12/31 22:59"), is: Month("2000/12"), in: .amsterdam),
+            
+            // Auckland
+            .date(Date("2001/09/30 12:00"), is: Month("2001/10"), in: .auckland),
+            .date(Date("2001/10/31 11:00"), is: Month("2001/11"), in: .auckland),
+            .date(Date("2002/02/28 11:00"), is: Month("2002/03"), in: .auckland),
+            .date(Date("2002/03/31 12:00"), is: Month("2002/04"), in: .auckland)
         )
     }
     
@@ -288,7 +317,12 @@ extension CalendarTests {
             .date(Date("2000/12/31 22:59"), is: Year("2000"), in: .utc),
             .date(Date("2000/12/31 22:59"), is: Year("2001"), in: .tokyo),
             .date(Date("2000/12/31 22:59"), is: Year("2000"), in: .honolulu),
-            .date(Date("2000/12/31 22:59"), is: Year("2000"), in: .amsterdam)
+            .date(Date("2000/12/31 22:59"), is: Year("2000"), in: .amsterdam),
+            
+            // Auckland
+            .date(Date("2000/12/31 10:00"), is: Year("2000"), in: .auckland),
+            .date(Date("2000/12/31 11:00"), is: Year("2001"), in: .auckland),
+            .date(Date("2000/12/31 12:00"), is: Year("2001"), in: .auckland)
         )
     }
     

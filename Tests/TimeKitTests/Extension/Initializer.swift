@@ -46,6 +46,22 @@ extension Day {
             self = Day(intervalSinceReferenceDate: 300)
         case "2001/10/29":
             self = Day(intervalSinceReferenceDate: 301)
+        case "2001/10/06":
+            self = Day(intervalSinceReferenceDate: 278)
+        case "2001/10/07":
+            self = Day(intervalSinceReferenceDate: 279)
+        case "2001/10/08":
+            self = Day(intervalSinceReferenceDate: 280)
+        case "2001/10/09":
+            self = Day(intervalSinceReferenceDate: 281)
+        case "2002/03/16":
+            self = Day(intervalSinceReferenceDate: 439)
+        case "2002/03/17":
+            self = Day(intervalSinceReferenceDate: 440)
+        case "2002/03/18":
+            self = Day(intervalSinceReferenceDate: 441)
+        case "2002/03/19":
+            self = Day(intervalSinceReferenceDate: 442)
         default:
             fatalError()
         }
@@ -68,6 +84,10 @@ extension Month {
             self = Month(intervalSinceReferenceDate: 9)
         case "2001/11":
             self = Month(intervalSinceReferenceDate: 10)
+        case "2002/03":
+            self = Month(intervalSinceReferenceDate: 14)
+        case "2002/04":
+            self = Month(intervalSinceReferenceDate: 15)
         default:
             fatalError()
         }

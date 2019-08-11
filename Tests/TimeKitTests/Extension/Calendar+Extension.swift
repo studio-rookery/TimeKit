@@ -31,6 +31,13 @@ extension Calendar {
         return calendar
     }()
     
+    /// +12:00
+    static let auckland: Calendar = {
+        var calendar = Calendar.utc
+        calendar.timeZone = TimeZone(identifier: "Pacific/Auckland")!
+        return calendar
+    }()
+    
     static let chinese: Calendar = {
         var calendar = Calendar(identifier: .chinese)
         calendar.locale = utc.locale
