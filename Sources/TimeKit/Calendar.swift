@@ -24,9 +24,26 @@ private extension Calendar {
         return TimeInterval(timeZone.secondsFromGMT())
     }
     
+    func secondsFromGMT(at date: Date) -> TimeInterval {
+        var secondsFromGMT = TimeInterval(timeZone.secondsFromGMT())
+        
+        if timeZone.isDaylightSavingTime() {
+            secondsFromGMT -= timeZone.daylightSavingTimeOffset()
+        }
+        
+        secondsFromGMT += timeZone.daylightSavingTimeOffset(for: date)
+        
+        return secondsFromGMT
+    }
+    
+    func dateInUTC(from date: Date) -> Date {
+        return date + secondsFromGMT(at: date)
+    }
+    
     func startDateComponents(_ component: Component, for date: Date) -> DateComponents {
-        let truncated = dateInterval(of: component, for: date)!.start + secondsFromGMT - timeZone.daylightSavingTimeOffset()
-        return dateComponents([component], from: .referenceDate, to: truncated)
+        let startDate = dateInterval(of: component, for: date)!.start
+        let dateInUTC = self.dateInUTC(from: startDate)
+        return Calendar.utc.dateComponents([component], from: .referenceDate, to: dateInUTC)
     }
     
     func startDate<T: ReferenceDateStrideable>(of component: Component, for value: T) -> Date {
