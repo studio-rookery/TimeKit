@@ -9,7 +9,7 @@ import Foundation
 
 /// `Weekday` represents the day of the week.
 /// `rawValue` corresponds to the value returned by `DateComponents.weekday`.
-public enum Weekday: Int, CaseIterable, Hashable, Codable {
+public enum Weekday: Int, CaseIterable, Hashable, Codable, Sendable {
     /// sunday
     case sunday = 1
     /// monday
