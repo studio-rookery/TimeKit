@@ -87,12 +87,28 @@ public extension Calendar {
         return day(for: startDate(of: month))
     }
     
+    /// Returns a last Day of a given Month.
+    ///
+    /// - Parameter month: the month to search.
+    /// - Returns: a last Day of a given Month.
+    func lastDay(of month: Month) -> Day {
+        return firstDay(of: month.next).previous
+    }
+    
     /// Returns a first Day of a given Year.
     ///
     /// - Parameter year: the year to search.
     /// - Returns: a first Day of a given Year.
     func firstDay(of year: Year) -> Day {
         return day(for: startDate(of: year))
+    }
+    
+    /// Returns a last Day of a given Year.
+    ///
+    /// - Parameter year: the year to search.
+    /// - Returns: a last Day of a given Year.
+    func lastDay(of year: Year) -> Day {
+        return firstDay(of: year.next).previous
     }
     
     /// Returns a Boolean value indicating whether a given day is beginning of month.
@@ -131,6 +147,14 @@ public extension Calendar {
     /// - Returns: a first Month of a given Year.
     func firstMonth(of year: Year) -> Month {
         return month(for: startDate(of: year))
+    }
+    
+    /// Returns a last Month of a given Year.
+    ///
+    /// - Parameter year: the year to search.
+    /// - Returns: a last Month of a given Year.
+    func lastMonth(of year: Year) -> Month {
+        return firstMonth(of: year.next).previous
     }
 }
 
@@ -235,5 +259,73 @@ public extension Calendar {
         } else {
             return next(weekday, after: day)
         }
+    }
+}
+
+// MARK: - Range / ClosedRange
+
+public extension Calendar {
+    
+    /// Returns the range of days in a given month as a half-open range.
+    ///
+    /// The returned range is `[firstDay, dayAfterLastDay)`, which is convenient for iteration and
+    /// filtering with `>= start && < end`.
+    ///
+    /// - Parameter month: the month to search.
+    /// - Returns: a half-open range of days in the month.
+    func days(asRangeIn month: Month) -> Range<Day> {
+        firstDay(of: month) ..< lastDay(of: month).next
+    }
+    
+    /// Returns the range of days in a given month as a closed range.
+    ///
+    /// The returned range includes both the first and the last day of the month.
+    ///
+    /// - Parameter month: the month to search.
+    /// - Returns: a closed range of days in the month.
+    func days(asClosedRangeIn month: Month) -> ClosedRange<Day> {
+        firstDay(of: month) ... lastDay(of: month)
+    }
+    
+    /// Returns the range of days in a given year as a half-open range.
+    ///
+    /// The returned range is `[firstDay, dayAfterLastDay)`, which is convenient for iteration and
+    /// filtering with `>= start && < end`.
+    ///
+    /// - Parameter year: the year to search.
+    /// - Returns: a half-open range of days in the year.
+    func days(asRangeIn year: Year) -> Range<Day> {
+        firstDay(of: year) ..< lastDay(of: year).next
+    }
+    
+    /// Returns the range of days in a given year as a closed range.
+    ///
+    /// The returned range includes both the first and the last day of the year.
+    ///
+    /// - Parameter year: the year to search.
+    /// - Returns: a closed range of days in the year.
+    func days(asClosedRangeIn year: Year) -> ClosedRange<Day> {
+        firstDay(of: year) ... lastDay(of: year)
+    }
+    
+    /// Returns the range of months in a given year as a half-open range.
+    ///
+    /// The returned range is `[firstMonth, monthAfterLastMonth)`, which is convenient for iteration and
+    /// filtering with `>= start && < end`.
+    ///
+    /// - Parameter year: the year to search.
+    /// - Returns: a half-open range of months in the year.
+    func months(asRangeIn year: Year) -> Range<Month> {
+        firstMonth(of: year) ..< lastMonth(of: year).next
+    }
+    
+    /// Returns the range of months in a given year as a closed range.
+    ///
+    /// The returned range includes both the first and the last month of the year.
+    ///
+    /// - Parameter year: the year to search.
+    /// - Returns: a closed range of months in the year.
+    func months(asClosedRangeIn year: Year) -> ClosedRange<Month> {
+        firstMonth(of: year) ... lastMonth(of: year)
     }
 }

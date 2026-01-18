@@ -22,8 +22,14 @@ final class CalendarTests: XCTestCase {
     let day_2001_01_06_sat = Day(intervalSinceReferenceDate: 5)
     let day_2001_01_07_sun = Day(intervalSinceReferenceDate: 6)
     let day_2001_01_08_mon = Day(intervalSinceReferenceDate: 7)
+    let day_2001_01_31_wed = Day(intervalSinceReferenceDate: 30)
+    let day_2001_02_02_thu = Day(intervalSinceReferenceDate: 31)
+    let day_2001_12_31_mon = Day(intervalSinceReferenceDate: 364)
+    let day_2002_01_01_tue = Day(intervalSinceReferenceDate: 365)
     
     let month_2001_01 = Month(intervalSinceReferenceDate: 0)
+    let month_2001_12 = Month(intervalSinceReferenceDate: 11)
+    let month_2002_01 = Month(intervalSinceReferenceDate: 12)
     
     let year_2001 = Year(intervalSinceReferenceDate: 0)
     
@@ -324,6 +330,30 @@ extension CalendarTests {
             .date(Date("2000/12/31 11:00"), is: Year("2001"), in: .auckland),
             .date(Date("2000/12/31 12:00"), is: Year("2001"), in: .auckland)
         )
+    }
+    
+    func testDaysAsRangeInMonth() {
+        XCTAssertEqual(utc.days(asRangeIn: month_2001_01), day_2001_01_01_mon ..< day_2001_02_02_thu)
+    }
+    
+    func testDaysAsClosedRangeInMonth() {
+        XCTAssertEqual(utc.days(asClosedRangeIn: month_2001_01), day_2001_01_01_mon ... day_2001_01_31_wed)
+    }
+    
+    func testDaysAsRangeInYear() {
+        XCTAssertEqual(utc.days(asRangeIn: year_2001), day_2001_01_01_mon ..< day_2002_01_01_tue)
+    }
+    
+    func testDaysAsClosedRangeInYear() {
+        XCTAssertEqual(utc.days(asClosedRangeIn: year_2001), day_2001_01_01_mon ... day_2001_12_31_mon)
+    }
+    
+    func testMonthsAsRangeInYear() {
+        XCTAssertEqual(utc.months(asRangeIn: year_2001), month_2001_01 ..< month_2002_01)
+    }
+    
+    func testMonthsAsClosedRangeInYear() {
+        XCTAssertEqual(utc.months(asClosedRangeIn: year_2001), month_2001_01 ... month_2001_12)
     }
     
     // MARK: - Helper
