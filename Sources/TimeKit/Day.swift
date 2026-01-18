@@ -15,6 +15,10 @@ public struct Day: Hashable, Codable, ReferenceDateStrideable {
     public init(intervalSinceReferenceDate: Int) {
         self.intervalSinceReferenceDate = intervalSinceReferenceDate
     }
+    
+    public var referenceDay: Day {
+        Day(intervalSinceReferenceDate: 0)
+    }
 }
 
 extension Day: CustomStringConvertible {

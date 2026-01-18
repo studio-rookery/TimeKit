@@ -15,6 +15,10 @@ public struct Month: Hashable, Codable, ReferenceDateStrideable {
     public init(intervalSinceReferenceDate: Int) {
         self.intervalSinceReferenceDate = intervalSinceReferenceDate
     }
+    
+    public var referenceMonth: Month {
+        Month(intervalSinceReferenceDate: 0)
+    }
 }
 
 extension Month: CustomStringConvertible {
