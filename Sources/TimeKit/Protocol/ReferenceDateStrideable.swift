@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol ReferenceDateStrideable: Strideable where Stride == Int {
+public protocol ReferenceDateStrideable: Strideable, Sendable where Stride == Int {
     
     var intervalSinceReferenceDate: Int { get }
     
