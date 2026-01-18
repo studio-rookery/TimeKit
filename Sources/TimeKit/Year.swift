@@ -15,6 +15,10 @@ public struct Year: Hashable, Codable, ReferenceDateStrideable {
     public init(intervalSinceReferenceDate: Int) {
         self.intervalSinceReferenceDate = intervalSinceReferenceDate
     }
+    
+    public var referenceYear: Year {
+        Year(intervalSinceReferenceDate: 0)
+    }
 }
 
 extension Year: CustomStringConvertible {
