@@ -266,6 +266,42 @@ public extension Calendar {
 
 public extension Calendar {
     
+    func dateRange(in day: Day) -> Range<Date> {
+        startDate(of: day) ..< startDate(of: day.next)
+    }
+    
+    func dateRange(in days: Range<Day>) -> Range<Date> {
+        startDate(of: days.lowerBound) ..< startDate(of: days.upperBound)
+    }
+    
+    func dateRange(in days: ClosedRange<Day>) -> Range<Date> {
+        startDate(of: days.lowerBound) ..< startDate(of: days.upperBound.next)
+    }
+    
+    func dateRange(in month: Month) -> Range<Date> {
+        startDate(of: month) ..< startDate(of: month.next)
+    }
+    
+    func dateRange(in months: Range<Month>) -> Range<Date> {
+        startDate(of: months.lowerBound) ..< startDate(of: months.upperBound)
+    }
+    
+    func dateRange(in months: ClosedRange<Month>) -> Range<Date> {
+        startDate(of: months.lowerBound) ..< startDate(of: months.upperBound.next)
+    }
+    
+    func dateRange(in year: Year) -> Range<Date> {
+        startDate(of: year) ..< startDate(of: year.next)
+    }
+    
+    func dateRange(in years: Range<Year>) -> Range<Date> {
+        startDate(of: years.lowerBound) ..< startDate(of: years.upperBound)
+    }
+    
+    func dateRange(in years: ClosedRange<Year>) -> Range<Date> {
+        startDate(of: years.lowerBound) ..< startDate(of: years.upperBound.next)
+    }
+    
     /// Returns the range of days in a given month as a half-open range.
     ///
     /// The returned range is `[firstDay, dayAfterLastDay)`, which is convenient for iteration and
