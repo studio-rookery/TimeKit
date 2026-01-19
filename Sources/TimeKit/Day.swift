@@ -10,6 +10,28 @@ import Foundation
 /// `Day` is a unit of time representing date without a TimeZone.
 public struct Day: Hashable, Codable, ReferenceDateStrideable {
     
+    public struct Components: Hashable, Codable {
+        
+        public var year: Int
+        public var month: Int
+        public var day: Int
+        
+        public init(year: Int, month: Int, day: Int) {
+            self.year = year
+            self.month = month
+            self.day = day
+        }
+        
+        public init?(dateComponents: DateComponents) {
+            guard let year = dateComponents.year, let month = dateComponents.month, let day = dateComponents.day else {
+                return nil
+            }
+            self.year = year
+            self.month = month
+            self.day = day
+        }
+    }
+    
     public var intervalSinceReferenceDate: Int
     
     public init(intervalSinceReferenceDate: Int) {

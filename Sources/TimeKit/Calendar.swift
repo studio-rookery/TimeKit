@@ -118,6 +118,36 @@ public extension Calendar {
     func isFirstDayOfMonth(_ day: Day) -> Bool {
         return firstDay(of: month(for: day)) == day
     }
+    
+    /// Returns a Day.Components from a given Day.
+    ///
+    /// - Parameter day: the day to get components.
+    /// - Returns: a Day.Components from a given Day.
+    func dayComponents(from day: Day) -> Day.Components {
+        let components = dateComponents([.year, .month, .day], from: startDate(of: day))
+        return Day.Components(dateComponents: components)!
+    }
+    
+    /// Returns a Day.Components from a given start Day to end Day.
+    ///
+    /// - Parameters:
+    ///   - start: the start day.
+    ///   - end: the end day.
+    /// - Returns: a Day.Components from a given start Day to end Day.
+    func dayComponents(from start: Day, to end: Day) -> Day.Components {
+        let components = dateComponents([.year, .month, .day], from: startDate(of: start), to: startDate(of: end))
+        return Day.Components(dateComponents: components)!
+    }
+
+    /// Returns a Day from a given Day.Components.
+    ///
+    /// - Parameter dayComponents: the components to create day.
+    /// - Returns: a Day from a given Day.Components.
+    func day(from dayComponents: Day.Components) -> Day {
+        let dateComponents = DateComponents(year: dayComponents.year, month: dayComponents.month, day: dayComponents.day)
+        let date = self.date(from: dateComponents)!
+        return day(for: date)
+    }
 }
 
 // MARK: - Month
@@ -156,6 +186,36 @@ public extension Calendar {
     func lastMonth(of year: Year) -> Month {
         return firstMonth(of: year.next).previous
     }
+    
+    /// Returns a Month.Components from a given Month.
+    ///
+    /// - Parameter month: the month to get components.
+    /// - Returns: a Month.Components from a given Month.
+    func monthComponents(from month: Month) -> Month.Components {
+        let components = dateComponents([.year, .month], from: startDate(of: month))
+        return Month.Components(dateComponents: components)!
+    }
+    
+    /// Returns a Month.Components from a given start Month to end Month.
+    ///
+    /// - Parameters:
+    ///   - start: the start month.
+    ///   - end: the end month.
+    /// - Returns: a Month.Components from a given start Month to end Month.
+    func monthComponents(from start: Month, to end: Month) -> Month.Components {
+        let components = dateComponents([.year, .month], from: startDate(of: start), to: startDate(of: end))
+        return Month.Components(dateComponents: components)!
+    }
+    
+    /// Returns a Month from a given Month.Components.
+    ///
+    /// - Parameter monthComponents: the components to create month.
+    /// - Returns: a Month from a given Month.Components.
+    func month(from monthComponents: Month.Components) -> Month {
+        let dateComponents = DateComponents(year: monthComponents.year, month: monthComponents.month)
+        let date = self.date(from: dateComponents)!
+        return month(for: date)
+    }
 }
 
 // MARK: - Year
@@ -185,6 +245,36 @@ public extension Calendar {
     /// - Returns: a Year containing a given Month.
     func year(for month: Month) -> Year {
         return year(for: startDate(of: month))
+    }
+    
+    /// Returns a Year.Components from a given Year.
+    ///
+    /// - Parameter year: the year to get components.
+    /// - Returns: a Year.Components from a given Year.
+    func yearComponents(from year: Year) -> Year.Components {
+        let components = dateComponents([.year], from: startDate(of: year))
+        return Year.Components(dateComponents: components)!
+    }
+    
+    /// Returns a Year.Components from a given start Year to end Year.
+    ///
+    /// - Parameters:
+    ///   - start: the start year.
+    ///   - end: the end year.
+    /// - Returns: a Year.Components from a given start Year to end Year.
+    func yearComponents(from start: Year, to end: Year) -> Year.Components {
+        let components = dateComponents([.year], from: startDate(of: start), to: startDate(of: end))
+        return Year.Components(dateComponents: components)!
+    }
+    
+    /// Returns a Year from a given Year.Components.
+    ///
+    /// - Parameter yearComponents: the components to create year.
+    /// - Returns: a Year from a given Year.Components.
+    func year(from yearComponents: Year.Components) -> Year {
+        let dateComponents = DateComponents(year: yearComponents.year)
+        let date = self.date(from: dateComponents)!
+        return year(for: date)
     }
 }
 
