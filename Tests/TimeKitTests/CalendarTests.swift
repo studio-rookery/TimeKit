@@ -356,6 +356,42 @@ extension CalendarTests {
         XCTAssertEqual(utc.months(asClosedRangeIn: year_2001), month_2001_01 ... month_2001_12)
     }
     
+    func testDateRangeInDay() {
+        XCTAssertEqual(utc.dateRange(in: day_2001_01_01_mon), Date("2001/01/01 00:00") ..< Date("2001/01/02 00:00"))
+    }
+    
+    func testDateRangeInDays_Range() {
+        XCTAssertEqual(utc.dateRange(in: day_2001_01_01_mon ..< day_2001_01_03_wed), Date("2001/01/01 00:00") ..< Date("2001/01/03 00:00"))
+    }
+    
+    func testDateRangeInDays_ClosedRange() {
+        XCTAssertEqual(utc.dateRange(in: day_2001_01_01_mon ... day_2001_01_02_tue), Date("2001/01/01 00:00") ..< Date("2001/01/03 00:00"))
+    }
+    
+    func testDateRangeInMonth() {
+        XCTAssertEqual(utc.dateRange(in: month_2001_01), Date("2001/01/01 00:00") ..< Date("2001/02/01 00:00"))
+    }
+    
+    func testDateRangeInMonths_Range() {
+        XCTAssertEqual(utc.dateRange(in: month_2001_01 ..< month_2001_01.next.next), Date("2001/01/01 00:00") ..< Date("2001/03/01 00:00"))
+    }
+    
+    func testDateRangeInMonths_ClosedRange() {
+        XCTAssertEqual(utc.dateRange(in: month_2001_01 ... month_2001_01.next), Date("2001/01/01 00:00") ..< Date("2001/03/01 00:00"))
+    }
+    
+    func testDateRangeInYear() {
+        XCTAssertEqual(utc.dateRange(in: year_2001), Date("2001/01/01 00:00") ..< Date("2002/01/01 00:00"))
+    }
+    
+    func testDateRangeInYears_Range() {
+        XCTAssertEqual(utc.dateRange(in: year_2001 ..< year_2001.next.next), Date("2001/01/01 00:00") ..< Date("2003/01/01 00:00"))
+    }
+    
+    func testDateRangeInYears_ClosedRange() {
+        XCTAssertEqual(utc.dateRange(in: year_2001 ... year_2001.next), Date("2001/01/01 00:00") ..< Date("2003/01/01 00:00"))
+    }
+    
     // MARK: - Helper
     
     struct TestCase {
