@@ -266,38 +266,74 @@ public extension Calendar {
 
 public extension Calendar {
     
+    /// Returns a range of dates in a given Day.
+    ///
+    /// - Parameter day: the day to search.
+    /// - Returns: a range of dates in a given Day.
     func dateRange(in day: Day) -> Range<Date> {
         startDate(of: day) ..< startDate(of: day.next)
     }
     
+    /// Returns a range of dates in a given range of Days.
+    ///
+    /// - Parameter days: the range of days to search.
+    /// - Returns: a range of dates in a given range of Days.
     func dateRange(in days: Range<Day>) -> Range<Date> {
         startDate(of: days.lowerBound) ..< startDate(of: days.upperBound)
     }
     
+    /// Returns a range of dates in a given closed range of Days.
+    ///
+    /// - Parameter days: the closed range of days to search.
+    /// - Returns: a range of dates in a given closed range of Days.
     func dateRange(in days: ClosedRange<Day>) -> Range<Date> {
         startDate(of: days.lowerBound) ..< startDate(of: days.upperBound.next)
     }
     
+    /// Returns a range of dates in a given Month.
+    ///
+    /// - Parameter month: the month to search.
+    /// - Returns: a range of dates in a given Month.
     func dateRange(in month: Month) -> Range<Date> {
         startDate(of: month) ..< startDate(of: month.next)
     }
     
+    /// Returns a range of dates in a given range of Months.
+    ///
+    /// - Parameter months: the range of months to search.
+    /// - Returns: a range of dates in a given range of Months.
     func dateRange(in months: Range<Month>) -> Range<Date> {
         startDate(of: months.lowerBound) ..< startDate(of: months.upperBound)
     }
     
+    /// Returns a range of dates in a given closed range of Months.
+    ///
+    /// - Parameter months: the closed range of months to search.
+    /// - Returns: a range of dates in a given closed range of Months.
     func dateRange(in months: ClosedRange<Month>) -> Range<Date> {
         startDate(of: months.lowerBound) ..< startDate(of: months.upperBound.next)
     }
     
+    /// Returns a range of dates in a given Year.
+    ///
+    /// - Parameter year: the year to search.
+    /// - Returns: a range of dates in a given Year.
     func dateRange(in year: Year) -> Range<Date> {
         startDate(of: year) ..< startDate(of: year.next)
     }
     
+    /// Returns a range of dates in a given range of Years.
+    ///
+    /// - Parameter years: the range of years to search.
+    /// - Returns: a range of dates in a given range of Years.
     func dateRange(in years: Range<Year>) -> Range<Date> {
         startDate(of: years.lowerBound) ..< startDate(of: years.upperBound)
     }
     
+    /// Returns a range of dates in a given closed range of Years.
+    ///
+    /// - Parameter years: the closed range of years to search.
+    /// - Returns: a range of dates in a given closed range of Years.
     func dateRange(in years: ClosedRange<Year>) -> Range<Date> {
         startDate(of: years.lowerBound) ..< startDate(of: years.upperBound.next)
     }
