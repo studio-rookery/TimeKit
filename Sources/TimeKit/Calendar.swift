@@ -75,8 +75,13 @@ public extension Calendar {
     /// - Parameter date: the date to search.
     /// - Returns: a Day containing a given Date.
     func day(for date: Date) -> Day {
-        let interval = startDateComponents(.day, for: date).day!
-        return Day(intervalSinceReferenceDate: interval)
+        // A Day is a civil date, so it is the number of whole days between local midnight of the
+        // reference date and the local wall-clock time of `date`. Computing it from the time zone
+        // offset keeps this constant time; `dateComponents(_:from:to:)` walks the calendar instead
+        // and is far too slow to call once per event while scrolling.
+        let offset = TimeInterval(timeZone.secondsFromGMT(for: date))
+        let localInterval = date.timeIntervalSinceReferenceDate + offset
+        return Day(intervalSinceReferenceDate: Int((localInterval / 86_400).rounded(.down)))
     }
     
     /// Returns a first Day of a given Month.
