@@ -44,4 +44,10 @@ extension Calendar {
         calendar.timeZone = utc.timeZone
         return calendar
     }()
+
+    static func with(timeZone identifier: String) -> Calendar {
+        var calendar = Calendar.utc
+        calendar.timeZone = TimeZone(identifier: identifier)!
+        return calendar
+    }
 }
