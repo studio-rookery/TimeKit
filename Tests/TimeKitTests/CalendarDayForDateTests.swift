@@ -77,12 +77,6 @@ final class CalendarDayForDateTests: XCTestCase {
 
 private extension Calendar {
 
-    static func with(timeZone identifier: String) -> Calendar {
-        var calendar = Calendar.utc
-        calendar.timeZone = TimeZone(identifier: identifier)!
-        return calendar
-    }
-
     /// The previous, component based implementation of `day(for:)`
     func referenceDay(for date: Date) -> Day {
         let referenceDate = Date.referenceDate
