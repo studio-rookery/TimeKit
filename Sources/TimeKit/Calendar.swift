@@ -19,7 +19,17 @@ extension Calendar {
 }
 
 private extension Calendar {
-    
+
+    /// The gregorian calendar in the same time zone
+    var gregorian: Calendar {
+        guard identifier != .gregorian else {
+            return self
+        }
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = timeZone
+        return calendar
+    }
+
     func baseDate() -> Date {
         let referenceDate = Date.referenceDate
         let offset = TimeInterval(timeZone.secondsFromGMT(for: referenceDate))
@@ -46,19 +56,14 @@ public extension Calendar {
     /// - Parameter day: the day to search.
     /// - Returns: first moment of a given Day.
     func startDate(of day: Day) -> Date {
-        // A Day is a civil date, so this looks up the moment by wall-clock time, the same way as
-        // `day(for:)`. Adding days with the calendar would count only the days that exist locally
-        // and drift by one after a zone skips a date, like Pacific/Apia on 2011-12-30.
-        let noon = TimeInterval(day.intervalSinceReferenceDate) * 86_400 + 43_200
-        let utcNoon = Date(timeIntervalSinceReferenceDate: noon)
-        let offset = TimeInterval(timeZone.secondsFromGMT(for: utcNoon))
-        let localNoon = Date(timeIntervalSinceReferenceDate: noon - offset)
-        // A skipped date has no moments of its own, so it starts when the next date does.
-        // Anything derived from this moment, like its components or month, is the next date's too.
-        guard self.day(for: localNoon) >= day else {
-            return startDate(of: day.next)
-        }
-        return startOfDay(for: localNoon)
+        // A Day is a civil date, so this asks for the same year, month and day in the local time zone.
+        // Adding days with the calendar would count only the days that exist locally and drift by one
+        // after a zone skips a date, like Pacific/Apia on 2011-12-30. A skipped date resolves to the
+        // start of the next date, so anything derived from it, like its month, is the next date's too.
+        let utcDate = Date(timeIntervalSinceReferenceDate: TimeInterval(day.intervalSinceReferenceDate) * 86_400)
+        // Without the era, a year before the common era would be read as a year of the common era
+        let components = Calendar.utc.dateComponents([.era, .year, .month, .day], from: utcDate)
+        return gregorian.date(from: components)!
     }
     
     /// Returns first moment of a given Month, as a Date

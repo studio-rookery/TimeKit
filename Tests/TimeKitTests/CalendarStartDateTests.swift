@@ -91,6 +91,27 @@ final class CalendarStartDateTests: XCTestCase {
         XCTAssertEqual(kwajalein.day(for: range.lowerBound), repeated)
         XCTAssertEqual(kwajalein.day(for: range.upperBound.addingTimeInterval(-1)), repeated)
     }
+
+    func testRoundTripBeforeCommonEra() {
+        // August 2 BCE
+        let day = Day(intervalSinceReferenceDate: -731_000)
+        for calendar in [Calendar.utc, Calendar.tokyo] {
+            XCTAssertEqual(calendar.day(for: calendar.startDate(of: day)), day)
+        }
+    }
+
+    func testSameMomentInNonGregorianCalendars() {
+        let identifiers: [Calendar.Identifier] = [.japanese, .buddhist, .hebrew, .islamicUmmAlQura, .chinese, .persian]
+        let days = [Day(year: 1989, month: 1, day: 7), Day(year: 2019, month: 5, day: 1), Day(year: 2026, month: 10, day: 31)]
+        for identifier in identifiers {
+            var calendar = Calendar(identifier: identifier)
+            calendar.timeZone = TimeZone(identifier: "Asia/Tokyo")!
+            for day in days {
+                XCTAssertEqual(calendar.startDate(of: day), Calendar.tokyo.startDate(of: day), "\(day) in \(identifier)")
+                XCTAssertEqual(calendar.day(for: calendar.startDate(of: day)), day, "\(day) in \(identifier)")
+            }
+        }
+    }
 }
 
 private extension Day {
